@@ -619,15 +619,15 @@ const blopen = (q, t) => {
             case 3:
                 document.getElementById(`bl_ans${q}`).innerHTML=`
                     <p class="bl_ans_txt">
-                        今回は提出の手軽さからCSV、jsonを採用していますが、MySQLも取り扱うことができます。
+                        触れます。
+                        実際に訓練でillustratorを使ってポスターを制作したことがあります。
                     </p>
                 `;/**/
                 break;
             case 4:
                 document.getElementById(`bl_ans${q}`).innerHTML=`
                     <p class="bl_ans_txt">
-                        触れます。
-                        実際に訓練でillustratorを使ってポスターを制作したことがあります。
+                        今回は今回はプロトタイプとしての俊敏性を重視してCSV、jsonを採用していますが、MySQLについても学習を進めており、基礎知識はある程度持っております。
                     </p>
                 `;/**/
                 break;
