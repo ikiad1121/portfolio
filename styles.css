@@ -256,7 +256,25 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    animation:scroller1;
+    animation-timeline:scroll();
 }
+
+@keyframes scroller1{
+    0%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    5%{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    100%{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+    
 
 .u768_cover_head{
     background-color: #ecf6ff;
@@ -470,7 +488,7 @@ main{
     }
 }
 
-
+/* 注意書き */
 .caution{
     border:3px solid #ffcc00;
     background-color:rgba(255, 204, 0, 0.3);
@@ -484,6 +502,7 @@ main{
     margin-block-start: 0;
     margin-block-end: 0;
 }
+/* 注意書き ここまで */
 
 .u_line{
     width:100%;
@@ -528,7 +547,167 @@ main{
     font-size:14px;
 }
 
+/* blind */
+.bl_window{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
+    background-color:#4080c0;
+    color:#ffffff;
+
+    font-size:20px;
+    border-radius:10px;
+    padding:10px;
+}
+
+.bl_line{
+    position:relative;
+    background-color:#ffffff;
+    width:20px;
+    height:2px;
+}
+
+.bl_mark:hover{
+    cursor:pointer;
+}
+
+/*.bl_l11,.bl_l12,.bl_l21,.bl_l22{
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}*/
+
+.bl_l11,.bl_l21{
+    top:2px;
+}
+
+.bl_l11{
+    animation:blindclose1;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+.bl_l12{
+    animation:blindclose2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+.bl_ans_cls{
+    animation:blindclose3;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+@keyframes blindclose1{
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(90deg);
+    }
+}
+
+@keyframes blindclose2{
+    from{
+        transform:rotate(180deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+}
+
+@keyframes blindclose3{
+    from{
+        height:50px;
+        opacity:1;
+    }
+
+    30%{
+        height:50px;
+        opacity:0;
+    }
+
+    to{
+        height:0;
+        opacity:0;
+    }
+}
+
+.bl_l21{
+    animation:blindopen1;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+.bl_l22{
+    animation:blindopen2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+.bl_ans_opn{
+    animation:blindopen3;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+
+@keyframes blindopen1{
+    from{
+        transform:rotate(90deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes blindopen2{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(180deg);
+    }
+}
+
+@keyframes blindopen3{
+    from{
+        height:0;
+        opacity:0;
+    }
+
+    70%{
+        height:50px;
+        opacity:0;
+    }
+
+    to{
+        height:50px;
+        opacity:1;
+    }
+}
+
+.bl_ans_txt{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding:10px;
+}
+
+/* blind ここまで */
+
+/* works */
 .works_flex{
     display:flex;
     flex-direction: row;
@@ -644,6 +823,12 @@ main{
     transition: opacity 0.5s;
 }
 
+.works_head{
+    font-size:20px;
+    font-weight:550;
+    color:#204080;
+}
+
 .pops{
     display: flex;
     justify-content: end;
@@ -665,17 +850,22 @@ main{
     transition: color 0.3s, border 0.3s, background-color 0.3s;
 }
 
+.margin_10{
+    display: inline-block;
+    margin:10px 0;
+}
+
 
 @media screen and (min-width:999px){
     .works_container, .works_img{
-        width:240px;
-        height:240px;
+        width:180px;
+        height:180px;
     }
 }
 
 @media screen and (max-width:1000px){
     .works_container, .works_img{
-        width:24vw;
-        height:24vw;
+        width:18vw;
+        height:18vw;
     }
 }
